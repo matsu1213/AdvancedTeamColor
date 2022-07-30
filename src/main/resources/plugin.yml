@@ -1,0 +1,3 @@
+name: AdvancedTeamColor
+version: '${project.version}'
+main: net.azisaba.advancedteamcolor.AdvancedTeamColor
