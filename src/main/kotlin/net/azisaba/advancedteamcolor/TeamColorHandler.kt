@@ -15,6 +15,11 @@ class TeamColorHandler : PacketAdapter(
 
     override fun onPacketSending(e: PacketEvent) {
         if (e.packetType == PacketType.Play.Server.SCOREBOARD_TEAM) {
+
+            if(e.player.world.name.contains("lobby")){
+                return
+            }
+
             if ((e.packet.modifier.read(7) as Collection<String?>).contains(e.player.name)) {
                 val i = e.packet.modifier.read(8) as Int
                 if (i == 0 || i == 2) {
